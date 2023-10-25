@@ -29,5 +29,10 @@ public class CarMain {
         bmv.takeInfo();
         sahin.takeInfo();
 
+        sahin.slowDown(40);
+
+
+        Car audi = new Car("white", 150,true);
+        audi.takeInfo();
     }
 }
