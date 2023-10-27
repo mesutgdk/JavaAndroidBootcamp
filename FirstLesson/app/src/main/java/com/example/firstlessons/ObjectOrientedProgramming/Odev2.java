@@ -55,8 +55,26 @@ public class Odev2 {
 
         if (totalWorkHour <= 150){
             regularWage = totalWorkHour * regularRate;
+            return  regularWage;
         } else {
             regularWage = endOfRegularRate * regularRate;
+            overtimeWage = (totalWorkHour-endOfRegularRate) * overtimeRate;
+            int totalWage = regularWage + overtimeWage;
+            return  totalWage;
+        }
+    }
+
+    // otopark saat ücret hesabı
+    public  double question7(double hoursParked){
+        int basePrice = 50;
+        int priceAfterOneHour = 10;
+
+        if (hoursParked <=0){
+            return 0;
+        }else if (hoursParked <= 1){
+        return basePrice;
+        } else {
+            return basePrice + priceAfterOneHour*(hoursParked - 1) ;
         }
     }
 }

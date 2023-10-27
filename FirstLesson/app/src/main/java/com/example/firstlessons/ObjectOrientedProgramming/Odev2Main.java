@@ -30,13 +30,16 @@ public class Odev2Main {
         int totalAngles = o2.question5(countOfSides);
         System.out.println(countOfSides + " Kenarlı Şeklin İç Açıları Toplamı = " + totalAngles);
 
+        // salary calculation by working day
+        int days = 25;
+        int totalMoney = o2.question6(days);
+        System.out.println("Your deserve: " + totalMoney + " TL this month.");
 
-
-
-
-
-
-
+        // Parking fee: 50 for one hour, plus 10 per hour after
+        int parkHours = 4;
+        double parkFee = o2.question7(parkHours);
+        System.out.println("Your park fee: " + parkFee + " TL for " + parkHours);
+        
     }
 
 
