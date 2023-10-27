@@ -25,4 +25,38 @@ public class Odev2 {
             return result;
         }
     }
+ // Stringde kaç tane belirtilen harften var
+    public int question4(String input, char target) {
+        int count = 0;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == target) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    //Kenar sayılarına göre iç açıların toplamını verme
+    public  int question5(int sides){
+        int totalAngles = ((sides - 2)*180);
+        return  totalAngles;
+    }
+
+    // çalışılan gün sayısına göre ücret hesabı
+    public int question6(int days){
+        int hoursForADay = 8;
+        int regularRate = 40;
+        int overtimeRate = 80;
+        int endOfRegularRate = 150;
+
+        int totalWorkHour = hoursForADay*days;
+        int regularWage = 0;
+        int overtimeWage = 0;
+
+        if (totalWorkHour <= 150){
+            regularWage = totalWorkHour * regularRate;
+        } else {
+            regularWage = endOfRegularRate * regularRate;
+        }
+    }
 }
