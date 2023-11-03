@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Beni Uyandır</string>
+    <string name="wakeMeUp">Beni Uyandır</string>
+    <string name="userName">Kullanıcı Adı</string>
+    <string name="password">Şifre</string>
+    <string name="forgetPassword">Şifreyi mi Unuttun?</string>
+    <string name="loginButton">Giriş Yap</string>
+    <string name="signInVia">Bir Hesabınız yok mu?</string>
+</resources>

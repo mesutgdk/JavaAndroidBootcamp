@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="themeColor">#00b8c8</color>
-    <color name="buttonColor1">#ff8a80</color>
     <color name="buttonColor2">#e3d4c1</color>
-    <color name="buttonColor3">#ff796e</color>
+    <color name="buttonColor1">#ff796e</color>
+    <color name="buttonColor3">#ff8a80</color>
 </resources>
