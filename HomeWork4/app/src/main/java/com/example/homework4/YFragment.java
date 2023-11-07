@@ -8,19 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.homework4.databinding.FragmentABinding;
+import com.example.homework4.databinding.FragmentYBinding;
 
 
-public class AFragment extends Fragment {
+public class YFragment extends Fragment {
 
-    private FragmentABinding binding;
-
+    private FragmentYBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentABinding.inflate(inflater,container,false);
-
-
+        binding = FragmentYBinding.inflate(inflater,container,false);
+        // Inflate the layout for this fragment
         return binding.getRoot();
     }
 }

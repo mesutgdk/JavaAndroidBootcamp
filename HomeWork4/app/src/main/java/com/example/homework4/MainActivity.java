@@ -1,6 +1,7 @@
 package com.example.homework4;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
 
 import android.os.Bundle;
 
@@ -15,6 +16,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding.button2GoA.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.AFragment);
+        });
+
+        binding.button2GoX.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.XFragment);
+        });
 
         setContentView(binding.getRoot());
     }
