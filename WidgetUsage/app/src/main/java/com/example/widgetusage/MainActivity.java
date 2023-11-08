@@ -3,6 +3,8 @@ package com.example.widgetusage;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import com.example.widgetusage.databinding.ActivityMainBinding;
 
@@ -28,6 +30,22 @@ public class MainActivity extends AppCompatActivity {
             binding.imageView.setImageResource(getResources().getIdentifier("sad","drawable",getPackageName()));
         });
 
+        binding.buttonStart.setOnClickListener(v -> {   // görseli görünür yap kaybet
+            binding.progressBar.setVisibility(View.VISIBLE);
+        });
+
+        binding.buttonStop.setOnClickListener(v -> {
+            binding.progressBar.setVisibility(View.INVISIBLE);
+        });
+
+        // switch button çalışması
+        binding.switch1.setOnCheckedChangeListener((mSwitch,isChecked) -> {
+            if (isChecked) {
+                Log.e("Sonuç","Switch : ON");
+            }else{
+                Log.e("Sonuç","Switch : OFF");
+            }
+        });
 
     }
 }
