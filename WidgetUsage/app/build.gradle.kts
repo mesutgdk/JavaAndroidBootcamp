@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.widgetusage"
-    compileSdk = 33
+    compileSdk = 34
 
 
     buildFeatures{
@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.example.widgetusage"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
