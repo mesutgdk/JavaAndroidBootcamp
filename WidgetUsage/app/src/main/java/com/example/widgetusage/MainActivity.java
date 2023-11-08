@@ -5,12 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 
 import com.example.widgetusage.databinding.ActivityMainBinding;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+
+    private boolean checkIt = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,40 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Sonuç","Switch : OFF");
             }
         });
+
+
+        binding.toggleButton.addOnButtonCheckedListener(((group,checkID,isChecked)->{
+            checkIt = isChecked;
+            if(isChecked){
+                Button selectedButton = findViewById(binding.toggleButton.getCheckedButtonId());
+
+                String buttonYazi = selectedButton.getText().toString();
+                Log.e("Sonuç",buttonYazi);
+            }
+
+        }));
+
+        ArrayList<String> countries = new ArrayList<>();
+        countries.add("Turkey");
+        countries.add("China");
+        countries.add("USA");
+        countries.add("Japan");
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,countries); // listeleri sıralama
+        binding.autoCompleteTextView.setAdapter(arrayAdapter);
+
+
+        binding.buttonShow.setOnClickListener(v -> {
+            Log.e("Sonuç", "Swich Durumu : "+binding.switch1.isChecked());
+            if(checkIt){
+                Button selectedButton = findViewById(binding.toggleButton.getCheckedButtonId());
+                String buttonYazi = selectedButton.getText().toString();
+                Log.e("Sonuç",buttonYazi);
+            }
+            String country = binding.autoCompleteTextView.getText().toString();
+            Log.e("Sonuç", "Ülke: "+country);
+        });
+
 
     }
 }
