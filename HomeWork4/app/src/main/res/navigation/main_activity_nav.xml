@@ -37,7 +37,7 @@
         <action
             android:id="@+id/goingYFromB"
             app:destination="@id/YFragment"
-            app:popUpTo="@id/YFragment"
+            app:popUpTo="@id/mainFragment"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment
@@ -48,7 +48,7 @@
         <action
             android:id="@+id/goingYFromX"
             app:destination="@id/YFragment"
-            app:popUpTo="@id/YFragment"
+            app:popUpTo="@id/mainFragment"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment
