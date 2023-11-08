@@ -9,19 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.homework4.databinding.FragmentXBinding;
+import com.example.homework4.databinding.FragmentMainBinding;
 
-public class XFragment extends Fragment {
+public class MainFragment extends Fragment {
 
-    private FragmentXBinding binding;
-
+    private FragmentMainBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentXBinding.inflate(inflater,container,false);
+        binding = FragmentMainBinding.inflate(inflater,container,false);
         // Inflate the layout for this fragment
-        binding.button2YFromX.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.goingYFromX);
+
+        binding.button2GoA.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.goingA);
+        });
+        binding.button2GoX.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.goingX);
         });
         return binding.getRoot();
     }
