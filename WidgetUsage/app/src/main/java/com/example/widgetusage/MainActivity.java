@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             dp.show(getSupportFragmentManager(),"");
 
             dp.addOnPositiveButtonClickListener(v1 -> {
-                SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                SimpleDateFormat df = new SimpleDateFormat("dd/MMMM/yyyy", Locale.getDefault()); // dijital oceans tan bakabiliriz
                 String date = df.format(v1);
                 binding.editTextDate.setText(date);
             });
