@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "0";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button1.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "1";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button2.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "2";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button3.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "3";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button4.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "4";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button5.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "5";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button6.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "6";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button7.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "7";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button8.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "8";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
         binding.button9.setOnClickListener(v -> {
             if (displayValue != "0"){
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 displayValue = "9";
             }
-            binding.textView.setText(displayValue);
+            setText(displayValue);
         });
 
         binding.buttonReset.setOnClickListener(v -> {
@@ -262,7 +262,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setContentView(binding.getRoot());
-
     }
     private void reset(){
         displayValue = "0";
