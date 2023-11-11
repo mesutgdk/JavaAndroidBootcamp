@@ -6,6 +6,10 @@ android {
     namespace = "com.example.homework5calculator"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.homework5calculator"
         minSdk = 24
