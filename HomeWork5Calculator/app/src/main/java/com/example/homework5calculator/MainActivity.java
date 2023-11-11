@@ -142,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
                 number1 = (number1+number2);
 
                 isFinishedTypingNumber = true;
-                //binding.textView.setText(displayValue);
             }
         });
 
@@ -164,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
                 number1 = (number1-number2);
 
                 isFinishedTypingNumber = true;
-                //binding.textView.setText(displayValue);
             }
         });
         binding.buttonMultiply.setOnClickListener(v -> {
@@ -260,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
             }
-            
+
         });
 
         setContentView(binding.getRoot());
@@ -278,5 +276,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-   // private String buttonValue(){}
 
