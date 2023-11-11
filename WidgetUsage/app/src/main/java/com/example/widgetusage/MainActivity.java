@@ -2,6 +2,7 @@ package com.example.widgetusage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +10,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import com.example.widgetusage.databinding.ActivityMainBinding;
 import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 
@@ -137,7 +141,41 @@ public class MainActivity extends AppCompatActivity {
             Log.e("Sonuç", "Ülke: "+country);
             Log.e("Sonuç","Slider: "+binding.slider.getProgress());
         });
+        // görsel olarak üste çıkıyor, çok önerilmiyor
+        binding.buttonToast.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this,"Merhaba",Toast.LENGTH_SHORT).show();
+        });
 
+        // Atıştırma Anlamında, iosta yok, button ekleme
+        binding.buttonSnackBar.setOnClickListener(v1 -> {
+            Snackbar.make(v1, "Merhaba",Snackbar.LENGTH_SHORT)
+                    .setAction("Evet",v2 -> {
+                        //arka plan rengi, text rengi
+                        Snackbar.make(v1,"Silindi",Snackbar.LENGTH_SHORT)
+                                .setBackgroundTint(Color.RED)
+                                .setTextColor(Color.WHITE)
+                                .show();
+                    })
+                    //arka plan rengi, text rengi aksiyon tuş rengi
+                    .setBackgroundTint(Color.WHITE)
+                    .setTextColor(Color.BLUE)
+                    .setActionTextColor(Color.RED)
+                    .show();
+        });
+
+        // Allert button
+        binding.buttonAlert.setOnClickListener(v -> {
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle("Başlık")
+                    .setMessage("Mesaj")
+                    .setPositiveButton("Tamam",(d,i) -> {
+                        Toast.makeText(MainActivity.this,"Tamam Seçildi",Toast.LENGTH_SHORT).show();
+                    })
+                    .setNegativeButton("İptal",(d,i) -> {
+                        Toast.makeText(MainActivity.this,"İptal Seçildi",Toast.LENGTH_SHORT).show();
+                    })
+                    .show();
+        });
 
     }
 }
