@@ -20,19 +20,17 @@ public class KisiDetayFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentKisiDetayBinding.inflate(inflater,container,false);
 
-
-
         KisiDetayFragmentArgs bundle = KisiDetayFragmentArgs.fromBundle(getArguments());
         Kisiler gelenKisi = bundle.getKisi();
 
         binding.editTextKisiAd.setText(gelenKisi.getKisi_ad());
         binding.editTextKisiTel.setText(gelenKisi.getKisi_tel());
 
-        binding.buttonGNcelle.setOnClickListener(v -> {
+        binding.buttonGuncelle.setOnClickListener(v -> {
             String kisi_ad = binding.editTextKisiAd.getText().toString();
             String kisi_tel = binding.editTextKisiTel.getText().toString();
 
-            guncelle(gelenKisi.kisi_id, kisi_ad,kisi_tel);
+            guncelle(gelenKisi.getKisi_id(), kisi_ad,kisi_tel);
         });
 
         return binding.getRoot();

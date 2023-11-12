@@ -28,7 +28,7 @@ public class AnasayfaFragment extends Fragment {
             Navigation.findNavController(v).navigate(R.id.kisiKayitGecis);
         });
 
-        binding.searchView.setOnQueryTextFocusChangeListener(new SearchView.OnQueryTextListener(){
+        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
             @Override
             public boolean onQueryTextSubmit(String query) {
                 ara(query);

@@ -2,13 +2,12 @@ package com.example.contactapp.data.entity;
 
 import java.io.Serializable;
 
-public class Kisiler implements Serializable {
+public class Kisiler implements Serializable { // data transferi için
     private int kisi_id;
     private String kisi_ad;
     private String kisi_tel;
 
     private Kisiler(){
-
     }
 
     public Kisiler(int kisi_id, String kisi_ad, String kisi_tel) {
