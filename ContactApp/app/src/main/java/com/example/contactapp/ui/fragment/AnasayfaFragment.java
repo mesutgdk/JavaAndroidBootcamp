@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,9 @@ import android.widget.SearchView;
 import com.example.contactapp.R;
 import com.example.contactapp.data.entity.Kisiler;
 import com.example.contactapp.databinding.FragmentAnasayfaBinding;
+import com.example.contactapp.ui.adapter.KisilerAdapter;
+
+import java.util.ArrayList;
 
 public class AnasayfaFragment extends Fragment {
 
@@ -23,6 +27,21 @@ public class AnasayfaFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentAnasayfaBinding.inflate(inflater,container,false);
+
+        binding.kisilerRv.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        ArrayList<Kisiler> kisilerListesi = new ArrayList<>();
+        Kisiler k1 = new Kisiler(1,"Ahmet","12344");
+        Kisiler k2 = new Kisiler(2,"Atahan","23456");
+        Kisiler k3 = new Kisiler(3,"Çiğdem","34567");
+
+        kisilerListesi.add(k1);
+        kisilerListesi.add(k2);
+        kisilerListesi.add(k3);
+
+        KisilerAdapter adapter = new KisilerAdapter(kisilerListesi,requireContext()); // adapter'a gönderdik
+
+        binding.kisilerRv.setAdapter(adapter);
 
         binding.fab.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.kisiKayitGecis);
