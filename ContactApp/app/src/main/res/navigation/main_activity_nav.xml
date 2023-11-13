@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_anasayfa" >
         <action
             android:id="@+id/kisiDetayGecis"
-            app:destination="@id/kisiDetayFragment" />
+            app:destination="@id/kisiDetayFragment"
+            app:popUpTo="@id/anasayfaFragment" />
         <action
             android:id="@+id/kisiKayitGecis"
             app:destination="@id/kisiKayitFragment" />

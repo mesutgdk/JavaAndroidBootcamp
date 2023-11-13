@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +30,8 @@ public class AnasayfaFragment extends Fragment {
         binding = FragmentAnasayfaBinding.inflate(inflater,container,false);
 
         binding.kisilerRv.setLayoutManager(new LinearLayoutManager(requireContext()));
+        //binding.kisilerRv.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
+        //binding.kisilerRv.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.HORIZONTAL));
 
         ArrayList<Kisiler> kisilerListesi = new ArrayList<>();
         Kisiler k1 = new Kisiler(1,"Ahmet","12344");
