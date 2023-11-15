@@ -9,10 +9,20 @@
         android:id="@+id/anasayfaFragment"
         android:name="com.example.movieapp.ui.fragment.AnasayfaFragment"
         android:label="fragment_anasayfa"
-        tools:layout="@layout/fragment_anasayfa" />
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/detayGecis"
+            app:destination="@id/detayFragment"
+            app:popUpTo="@id/detayFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/detayFragment"
         android:name="com.example.movieapp.ui.fragment.DetayFragment"
         android:label="fragment_detay"
-        tools:layout="@layout/fragment_detay" />
+        tools:layout="@layout/fragment_detay" >
+        <argument
+            android:name="film"
+            app:argType="com.example.movieapp.data.entity.Filmler" />
+    </fragment>
 </navigation>
