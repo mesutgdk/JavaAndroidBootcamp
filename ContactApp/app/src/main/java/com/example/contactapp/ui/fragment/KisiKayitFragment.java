@@ -2,7 +2,9 @@ package com.example.contactapp.ui.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,10 +13,12 @@ import android.view.ViewGroup;
 
 import com.example.contactapp.R;
 import com.example.contactapp.databinding.FragmentKisiKayitBinding;
+import com.example.contactapp.ui.viewModel.KisiKayitViewModel;
 
 public class KisiKayitFragment extends Fragment {
 
     private FragmentKisiKayitBinding binding;
+    private KisiKayitViewModel viewModel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,5 +37,11 @@ public class KisiKayitFragment extends Fragment {
     public void kaydet(String kisi_ad,String kisi_tel){
         Log.e("Kişi Kaydet", kisi_ad + " - " + kisi_tel);
 
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        viewModel = new ViewModelProvider(this).get(KisiKayitViewModel.class);
     }
 }

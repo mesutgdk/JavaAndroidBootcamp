@@ -2,7 +2,9 @@ package com.example.contactapp.ui.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -17,12 +19,14 @@ import com.example.contactapp.R;
 import com.example.contactapp.data.entity.Kisiler;
 import com.example.contactapp.databinding.FragmentAnasayfaBinding;
 import com.example.contactapp.ui.adapter.KisilerAdapter;
+import com.example.contactapp.ui.viewModel.AnasayfaViewModel;
 
 import java.util.ArrayList;
 
 public class AnasayfaFragment extends Fragment {
 
     private FragmentAnasayfaBinding binding;
+    private AnasayfaViewModel viewModel; // viewmodel tanımlama
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -70,5 +74,12 @@ public class AnasayfaFragment extends Fragment {
 
     public void ara(String aramaKelimesi){
         Log.e("Kişi Ara",aramaKelimesi);
+    }
+
+    //ViewModel tanımlama fonksiyonu
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        viewModel = new ViewModelProvider(this).get(AnasayfaViewModel.class);
     }
 }

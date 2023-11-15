@@ -1,6 +1,7 @@
 package com.example.mvvmusage;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import com.example.mvvmusage.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private MainActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,14 +18,29 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.textViewSonuc.setText("0");
+        // viewModel çalıştırma tanımlama
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+
+        // LiveData tetikleme fonksiyonu
+        viewModel.sonuc.observe(this,s -> { // Dinleme, Okuma
+            binding.textViewSonuc.setText(s);
+        });
+
+
         binding.buttonTopla.setOnClickListener(v -> {
             String alinanSayi1 = binding.editTextSayi1.getText().toString();
             String alinanSayi2 = binding.editTextSayi2.getText().toString();
 
-            int sayi1 = Integer.parseInt(alinanSayi1);
-            int sayi2 = Integer.parseInt(alinanSayi2);
-            
+            viewModel.topla(alinanSayi1,alinanSayi2);
+
+        });
+
+        binding.buttonCarp.setOnClickListener(v -> {
+            String alinanSayi1 = binding.editTextSayi1.getText().toString();
+            String alinanSayi2 = binding.editTextSayi2.getText().toString();
+
+            viewModel.carp(alinanSayi1,alinanSayi2);
+
         });
     }
 }
