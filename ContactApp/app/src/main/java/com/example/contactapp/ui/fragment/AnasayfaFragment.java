@@ -57,13 +57,13 @@ public class AnasayfaFragment extends Fragment {
         binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
             @Override
             public boolean onQueryTextSubmit(String query) {
-                ara(query);
+                viewModel.ara(query);
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                ara(newText);
+                viewModel.ara(newText);
                 return true;
             }
 
@@ -72,9 +72,6 @@ public class AnasayfaFragment extends Fragment {
         return binding.getRoot();
     }
 
-    public void ara(String aramaKelimesi){
-        Log.e("Kişi Ara",aramaKelimesi);
-    }
 
     //ViewModel tanımlama fonksiyonu
     @Override

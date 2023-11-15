@@ -34,14 +34,12 @@ public class KisiDetayFragment extends Fragment {
             String kisi_ad = binding.editTextKisiAd.getText().toString();
             String kisi_tel = binding.editTextKisiTel.getText().toString();
 
-            guncelle(gelenKisi.getKisi_id(), kisi_ad,kisi_tel);
+            viewModel.guncelle(gelenKisi.getKisi_id(), kisi_ad,kisi_tel);
         });
 
         return binding.getRoot();
     }
-    public  void guncelle(int kisi_id,String kisi_ad,String kisi_tel){
-        Log.e("Kişi Güncelle", kisi_id + " - " + kisi_ad + " - " + kisi_tel);
-    }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

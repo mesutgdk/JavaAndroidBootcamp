@@ -29,15 +29,12 @@ public class KisiKayitFragment extends Fragment {
             String kisi_ad = binding.editTextKisiAd.getText().toString();
             String kisi_tel = binding.editTextKisiTel.getText().toString();
 
-            kaydet(kisi_ad,kisi_tel);
+            viewModel.kaydet(kisi_ad,kisi_tel);
 
         });
         return binding.getRoot();
     }
-    public void kaydet(String kisi_ad,String kisi_tel){
-        Log.e("Kişi Kaydet", kisi_ad + " - " + kisi_tel);
 
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
