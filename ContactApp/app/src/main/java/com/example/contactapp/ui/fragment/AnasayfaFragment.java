@@ -37,18 +37,11 @@ public class AnasayfaFragment extends Fragment {
         //binding.kisilerRv.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
         //binding.kisilerRv.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.HORIZONTAL));
 
-        ArrayList<Kisiler> kisilerListesi = new ArrayList<>();
-        Kisiler k1 = new Kisiler(1,"Ahmet","12344");
-        Kisiler k2 = new Kisiler(2,"Atahan","23456");
-        Kisiler k3 = new Kisiler(3,"Çiğdem","34567");
-
-        kisilerListesi.add(k1);
-        kisilerListesi.add(k2);
-        kisilerListesi.add(k3);
-
-        KisilerAdapter adapter = new KisilerAdapter(kisilerListesi,requireContext()); // adapter'a gönderdik
-
-        binding.kisilerRv.setAdapter(adapter);
+        // LiveDAta listener
+        viewModel.kisilerListesi.observe(getViewLifecycleOwner(),kisilerListesi -> {
+            KisilerAdapter adapter = new KisilerAdapter(kisilerListesi,requireContext(),viewModel);
+            binding.kisilerRv.setAdapter(adapter);
+        });
 
         binding.fab.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.kisiKayitGecis);
@@ -60,7 +53,7 @@ public class AnasayfaFragment extends Fragment {
                 viewModel.ara(query);
                 return true;
             }
-
+        // her tıklamada veri verir
             @Override
             public boolean onQueryTextChange(String newText) {
                 viewModel.ara(newText);
@@ -72,11 +65,17 @@ public class AnasayfaFragment extends Fragment {
         return binding.getRoot();
     }
 
-
     //ViewModel tanımlama fonksiyonu
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(AnasayfaViewModel.class);
+    }
+
+    // geri döndüğümüzde geri yükle
+    @Override
+    public void onResume() {
+        super.onResume();
+        viewModel.kisileriYukle();
     }
 }

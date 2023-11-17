@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.contactapp.data.entity.Kisiler;
 import com.example.contactapp.databinding.CardTasarimBinding;
 import com.example.contactapp.ui.fragment.AnasayfaFragmentDirections;
+import com.example.contactapp.ui.viewModel.AnasayfaViewModel;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
@@ -19,10 +20,12 @@ import java.util.List;
 public class KisilerAdapter extends RecyclerView.Adapter<KisilerAdapter.CardTasarimTutucu> {
     private List<Kisiler> kisilerListesi;
     private Context mContext;
+    private AnasayfaViewModel viewModel;
 
-    public KisilerAdapter(List<Kisiler> kisilerListesi, Context mContext) {
+    public KisilerAdapter(List<Kisiler> kisilerListesi, Context mContext, AnasayfaViewModel viewModel) {
         this.kisilerListesi = kisilerListesi;
         this.mContext = mContext;
+        this.viewModel = viewModel;
     }
 
     public class CardTasarimTutucu extends RecyclerView.ViewHolder{
@@ -56,7 +59,7 @@ public class KisilerAdapter extends RecyclerView.Adapter<KisilerAdapter.CardTasa
         t.imageViewSil.setOnClickListener(v -> {
             Snackbar.make(v,kisi.getKisi_ad()+" silinsin mi?",Snackbar.LENGTH_SHORT)
                     .setAction("Evet",v1 -> {
-                        sil(kisi.getKisi_id());
+                        viewModel.sil(kisi.getKisi_id());
                     })
                     .show();
         });
@@ -68,7 +71,4 @@ public class KisilerAdapter extends RecyclerView.Adapter<KisilerAdapter.CardTasa
         return kisilerListesi.size();
     }
 
-    public void sil(int kisi_id){
-        Log.e("Kişi Sil","Kişi idsi: "+String.valueOf(kisi_id));
-    }
 }
