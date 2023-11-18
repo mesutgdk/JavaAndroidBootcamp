@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
-
     id("androidx.navigation.safeargs")
+    id("dagger.hilt.android.plugin") // hint 2.aşama
+
 }
 
 android {
@@ -47,6 +48,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    //View Model dependency
-    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.5.1")
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.5.1")    //View Model dependency
+    implementation("com.google.dagger:hilt-android:2.44") // hilt 3. aşama
+    annotationProcessor("com.google.dagger:hilt-android-compiler:2.44") // hilt 3. aşama
 }

@@ -7,6 +7,9 @@ import androidx.lifecycle.ViewModel;
 import com.example.contactapp.data.repo.KisilerDaoRepository;
 import com.example.contactapp.ui.adapter.KisilerAdapter;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class KisiKayitViewModel extends ViewModel {
     public KisilerDaoRepository kRepo = new KisilerDaoRepository();
 

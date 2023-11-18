@@ -10,6 +10,9 @@ import com.example.contactapp.data.repo.KisilerDaoRepository;
 
 import java.util.List;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class AnasayfaViewModel extends ViewModel {
 
     public KisilerDaoRepository kRepo = new KisilerDaoRepository();
