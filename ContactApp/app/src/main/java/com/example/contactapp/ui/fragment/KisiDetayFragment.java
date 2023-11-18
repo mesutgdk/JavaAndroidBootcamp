@@ -16,6 +16,9 @@ import com.example.contactapp.data.entity.Kisiler;
 import com.example.contactapp.databinding.FragmentKisiDetayBinding;
 import com.example.contactapp.ui.viewModel.KisiDetayViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class KisiDetayFragment extends Fragment {
     private FragmentKisiDetayBinding binding;
     private KisiDetayViewModel viewModel;

@@ -15,6 +15,9 @@ import com.example.contactapp.R;
 import com.example.contactapp.databinding.FragmentKisiKayitBinding;
 import com.example.contactapp.ui.viewModel.KisiKayitViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class KisiKayitFragment extends Fragment {
 
     private FragmentKisiKayitBinding binding;
