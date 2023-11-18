@@ -4,23 +4,33 @@ import java.io.Serializable;
 
 public class Products implements Serializable {
     private int id;
-    private String name;
+    private String title;
     private String photo;
     private String size;
-    private String title;
-    private int favoridNumber;
+    private String descriptionShort;
+
+    private String descriptionLong;
+    private String usage;
+
+    private String brand;
+    private String color;
+    private int favorited;
     private int price;
 
     public Products() {
     }
 
-    public Products(int id, String name, String photo, String size, String title, int favoridNumber, int price) {
+    public Products(int id, String title, String photo, String size, String descriptionShort, String descriptionLong, String usage, String brand, String color, int favorited, int price) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.photo = photo;
         this.size = size;
-        this.title = title;
-        this.favoridNumber = favoridNumber;
+        this.descriptionShort = descriptionShort;
+        this.descriptionLong = descriptionLong;
+        this.usage = usage;
+        this.brand = brand;
+        this.color = color;
+        this.favorited = favorited;
         this.price = price;
     }
 
@@ -32,12 +42,12 @@ public class Products implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getPhoto() {
@@ -56,20 +66,52 @@ public class Products implements Serializable {
         this.size = size;
     }
 
-    public String getTitle() {
-        return title;
+    public String getDescriptionShort() {
+        return descriptionShort;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDescriptionShort(String descriptionShort) {
+        this.descriptionShort = descriptionShort;
     }
 
-    public int getFavoridNumber() {
-        return favoridNumber;
+    public String getDescriptionLong() {
+        return descriptionLong;
     }
 
-    public void setFavoridNumber(int favoridNumber) {
-        this.favoridNumber = favoridNumber;
+    public void setDescriptionLong(String descriptionLong) {
+        this.descriptionLong = descriptionLong;
+    }
+
+    public String getUsage() {
+        return usage;
+    }
+
+    public void setUsage(String usage) {
+        this.usage = usage;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getFavorited() {
+        return favorited;
+    }
+
+    public void setFavorited(int favorited) {
+        this.favorited = favorited;
     }
 
     public int getPrice() {

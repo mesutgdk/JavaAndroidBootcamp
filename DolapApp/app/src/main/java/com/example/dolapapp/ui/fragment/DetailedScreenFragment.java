@@ -9,14 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.dolapapp.R;
+import com.example.dolapapp.databinding.FragmentDetailedScreenBinding;
 
 public class DetailedScreenFragment extends Fragment {
 
-
+    private FragmentDetailedScreenBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detailed_screen, container, false);
+
+        binding = FragmentDetailedScreenBinding.inflate(inflater,container,false);
+
+        return binding.getRoot();
     }
 }
