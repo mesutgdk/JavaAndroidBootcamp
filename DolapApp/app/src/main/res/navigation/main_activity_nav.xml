@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_activity_nav">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainScreenFragment">
 
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.dolapapp.ui.fragment.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/goToDetailed"
+            app:destination="@id/detailedScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedScreenFragment"
+        android:name="com.example.dolapapp.ui.fragment.DetailedScreenFragment"
+        android:label="fragment_detailed_screen"
+        tools:layout="@layout/fragment_detailed_screen" />
 </navigation>

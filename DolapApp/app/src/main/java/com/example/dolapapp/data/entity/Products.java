@@ -11,7 +11,6 @@ public class Products implements Serializable {
 
     private String descriptionLong;
     private String usage;
-
     private String brand;
     private String color;
     private int favorited;

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.example.dolapapp.R;
 import com.example.dolapapp.data.entity.Products;
 import com.example.dolapapp.databinding.FragmentMainScreenBinding;
+import com.example.dolapapp.ui.adapter.ProductsAdapter;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,16 @@ public class MainScreenFragment extends Fragment {
         Products p6 = new Products(6,"Zara marka pantolon","pantolon","18-24 ay/92cm","Bebek&Çocuk Pantolon","Ürünlerimiz ihracat fazlası olup sıfırdır. İç etiketleri kesik olabilir","Yeni&Etiketli","Zara","Desenli",64,180);
         Products p7 = new Products(7,"Aslan Baskılı Erkek Bebek Takım","renklitakim","12-18 ay/86cm","Bebek&Çocuk Takım","Yıkama derecesi: 30C. Elde yıkama yapmayınız, %100 pamuktan üretilmiştir.","Yeni&Etiketli","Diğer","Bej",28,39);
 
+        productsList.add(p1);
+        productsList.add(p2);
+        productsList.add(p3);
+        productsList.add(p4);
+        productsList.add(p5);
+        productsList.add(p6);
+        productsList.add(p7);
+
+        //ProductsAdapter productsAdapter = new ProductsAdapter(productsList,requireContext());
+        //binding.productsRV.setAdapter(productsAdapter);
 
         return binding.getRoot();
     }
