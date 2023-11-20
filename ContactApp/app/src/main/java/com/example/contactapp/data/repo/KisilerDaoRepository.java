@@ -5,14 +5,29 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.contactapp.data.entity.Kisiler;
+import com.example.contactapp.room.KisilerDao;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.Scheduler;
+import io.reactivex.SingleObserver;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class KisilerDaoRepository {
 
     //LiveData verisi başlangıç 1
     public MutableLiveData<List<Kisiler>> kisilerListesi = new MutableLiveData<>();
+
+    //bunu dışarda istiyoruz
+    private KisilerDao kdao;
+
+    public KisilerDaoRepository(KisilerDao kdao){
+        this.kdao = kdao;
+    }
+
 
     public void kaydet(String kisi_ad,String kisi_tel){
         Log.e("Kişi Kaydet", kisi_ad + " - " + kisi_tel);
@@ -31,17 +46,23 @@ public class KisilerDaoRepository {
         kisilerYukle();
     }
 
+    // bu fonksiyon kisileri alınca bize okuma yapacak
     public  void kisilerYukle(){
-        ArrayList<Kisiler> liste = new ArrayList<>();
-        Kisiler k1 = new Kisiler(1,"Ahmet","12344");
-        Kisiler k2 = new Kisiler(2,"Atahan","23456");
-        Kisiler k3 = new Kisiler(3,"Çiğdem","34567");
+    kdao.kisilerYukle().subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(new SingleObserver<List<Kisiler>>() {
+                @Override
+                public void onSubscribe(Disposable d) {}
 
-        liste.add(k1);
-        liste.add(k2);
-        liste.add(k3);
+                @Override
+                public void onSuccess(List<Kisiler> kisilers) {
+                    kisilerListesi.setValue(kisilers); // bu fonksiyon kisileri alınca bize okuma yapacak
+                }
 
+                @Override
+                public void onError(Throwable e) {}
+            });
         //LiveData Veri girişi 2
-        kisilerListesi.setValue(liste);
+       // kisilerListesi.setValue(liste);
     }
 }
