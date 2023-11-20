@@ -14,19 +14,20 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.4" />
 
     <ImageView
         android:id="@+id/imageViewHeart"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/favorid_hearth"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="ELBİSE"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,32 +78,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/usage_photo"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="426dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionShort" />
 
     <TextView
         android:id="@+id/textViewUsage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="Az Kullanılmış"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="430dp" />
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/textViewColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:text="Pempe"
-        tools:layout_editor_absoluteX="318dp"
-        tools:layout_editor_absoluteY="430dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewUsage" />
 
     <TextView
         android:id="@+id/textViewDescriptionLong"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="Ebebekten almıştım, kışlık kalın geldi, yumuşacık"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,6 +122,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,8 +132,9 @@
         <AutoCompleteTextView
             android:id="@+id/taksit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Peşin fiyatına 3 taksit"
+            android:layout_height="wrap_content"
+            android:dropDownHeight="match_parent"
+            android:text="Peşin fiyatına 3 taksit"
             android:textColor="#D12BA8"
             android:textColorHint="#A4118B" />
     </com.google.android.material.textfield.TextInputLayout>

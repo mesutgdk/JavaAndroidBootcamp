@@ -6,12 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dolapapp.MainActivity;
 import com.example.dolapapp.data.entity.Products;
 import com.example.dolapapp.databinding.CardDesignBinding;
+import com.example.dolapapp.ui.fragment.DetailedScreenFragment;
 import com.example.dolapapp.ui.fragment.MainScreenFragmentDirections;
+
+
 
 import java.util.List;
 
@@ -62,6 +67,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.CardDe
         t.cardViewDress.setOnClickListener(v -> {
 
             MainScreenFragmentDirections.GoToDetailed transmission = MainScreenFragmentDirections.goToDetailed(product);
+
             Navigation.findNavController(v).navigate(transmission);
         });
     }
