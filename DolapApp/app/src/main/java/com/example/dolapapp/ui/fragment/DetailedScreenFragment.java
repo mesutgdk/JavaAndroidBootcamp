@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.example.dolapapp.R;
+import com.example.dolapapp.data.entity.Products;
 import com.example.dolapapp.databinding.FragmentDetailedScreenBinding;
 
 import java.util.ArrayList;
@@ -27,6 +28,25 @@ public class DetailedScreenFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentDetailedScreenBinding.inflate(inflater,container,false);
+
+        DetailedScreenFragmentArgs bundle = DetailedScreenFragmentArgs.fromBundle(getArguments());
+
+        Products product = bundle.getProduct();
+
+        binding.imageViewPhoto.setImageResource(getResources()
+                .getIdentifier(product.getPhoto(),"drawable",requireContext().getPackageName()));
+
+        binding.textViewBrand.setText(product.getBrand().toString() + " TL");
+
+        binding.textViewDescriptionShort.setText(product.getDescriptionShort().toString());
+
+        binding.textViewDescriptionLong.setText(product.getDescriptionLong());
+
+        binding.textViewUsage.setText(product.getUsage());
+
+        binding.textViewColor.setText(product.getColor());
+
+
 
         ArrayList<String> taksitArray = new ArrayList<>();
         taksitArray.add("Peşin fiyatına 1 taksit");

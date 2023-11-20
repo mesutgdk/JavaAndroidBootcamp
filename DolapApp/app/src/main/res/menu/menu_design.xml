@@ -11,7 +11,7 @@
     <item
         android:id="@+id/wardrobeFragment"
 
-        android:icon="@drawable/dolap_photo" />
+        android:icon="@android:drawable/ic_menu_search" />
     <item
         android:id="@+id/groceryFragment"
 

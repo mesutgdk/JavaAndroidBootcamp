@@ -26,6 +26,7 @@ public class FilmlerAdapter extends RecyclerView.Adapter<FilmlerAdapter.CardTasa
     }
 
 
+
     public class CardTasarimTutucu extends RecyclerView.ViewHolder{ // listeleme yapmak için
         private CardTasarimBinding tasarim;
 

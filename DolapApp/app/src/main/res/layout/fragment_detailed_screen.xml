@@ -57,7 +57,6 @@
         android:id="@+id/textViewBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:text="Zara"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/textViewTitle"

@@ -29,6 +29,7 @@ public class AnasayfaFragment extends Fragment {
         binding.filmlerRV.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
 
         ArrayList<Filmler> filmlerListesi = new ArrayList<>();
+
         Filmler f1 = new Filmler(1,"Django","django",24);
         Filmler f2 = new Filmler(2,"Interstellar","interstellar",32);
         Filmler f3 = new Filmler(3,"Inception","inception",16);
