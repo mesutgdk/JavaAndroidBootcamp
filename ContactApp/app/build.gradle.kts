@@ -49,7 +49,16 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.5.1")    //View Model dependency
+    //View Model dependency
+    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.5.1")
+
+    // hilt 3. aşama
     implementation("com.google.dagger:hilt-android:2.44") // hilt 3. aşama
-    annotationProcessor("com.google.dagger:hilt-android-compiler:2.44") // hilt 3. aşama
+    annotationProcessor("com.google.dagger:hilt-android-compiler:2.44")
+
+    // room kütüphanesi sqlite
+    implementation ("androidx.room:room-runtime:2.4.3")
+    annotationProcessor ("androidx.room:room-compiler:2.4.3")
+    implementation ("androidx.room:room-rxjava2:2.4.3")
+    implementation ("io.reactivex.rxjava2:rxandroid:2.0.1")
 }

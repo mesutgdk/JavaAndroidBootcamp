@@ -1,7 +1,11 @@
 package com.example.contactapp.data.entity;
 
+import androidx.room.Entity;
+
 import java.io.Serializable;
 
+//sqlite tanım başlangıcı
+@Entity(tableName = "kisiler")
 public class Kisiler implements Serializable { // data transferi için
     private int kisi_id;
     private String kisi_ad;
@@ -9,6 +13,7 @@ public class Kisiler implements Serializable { // data transferi için
 
     private Kisiler(){
     }
+
 
     public Kisiler(int kisi_id, String kisi_ad, String kisi_tel) {
         this.kisi_id = kisi_id;

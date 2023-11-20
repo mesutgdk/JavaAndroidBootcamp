@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainSecFragment"
+        android:icon="@drawable/home_photo" />
+    <item
+        android:id="@+id/bellFragment"
+        android:icon="@drawable/bell_photo" />
+    <item
+        android:id="@+id/wardrobeFragment"
+
+        android:icon="@drawable/dolap_photo" />
+    <item
+        android:id="@+id/groceryFragment"
+
+        android:icon="@drawable/store_photo" />
+    <item
+        android:id="@+id/accountFragment"
+
+        android:icon="@drawable/persone_photo" />
+</menu>
