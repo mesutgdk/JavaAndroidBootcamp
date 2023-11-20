@@ -25,7 +25,7 @@ public class AnasayfaViewModel extends ViewModel {
     public AnasayfaViewModel(KisilerDaoRepository kRepo){
         this.kRepo = kRepo;
         kisileriYukle();
-        kisilerListesi =kRepo.kisilerListesi;
+        kisilerListesi = kRepo.kisilerListesi;
     }
     public void ara(String aramaKelimesi){
 
