@@ -64,6 +64,10 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.CardDe
 
         t.textViewCardSize.setText(product.getSize());
 
+        String favorited = String.valueOf(product.getFavorited());
+        t.textView4Favoried.setText(favorited);
+
+
         t.cardViewDress.setOnClickListener(v -> {
 
             MainScreenFragmentDirections.GoToDetailed transmission = MainScreenFragmentDirections.goToDetailed(product);

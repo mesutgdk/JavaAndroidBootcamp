@@ -64,7 +64,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewCardBrand" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView4Favoried"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -92,9 +92,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView4"
-                app:layout_constraintEnd_toStartOf="@+id/textView4"
-                app:layout_constraintTop_toTopOf="@+id/textView4"
+                app:layout_constraintBottom_toBottomOf="@+id/textView4Favoried"
+                app:layout_constraintEnd_toStartOf="@+id/textView4Favoried"
+                app:layout_constraintTop_toTopOf="@+id/textView4Favoried"
                 app:srcCompat="@drawable/favorid_hearth" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

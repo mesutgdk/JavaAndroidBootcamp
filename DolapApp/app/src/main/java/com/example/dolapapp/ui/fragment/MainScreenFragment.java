@@ -29,7 +29,7 @@ public class MainScreenFragment extends Fragment {
 
         ArrayList<Products> productsList = new ArrayList<>();
 
-        Products p1 = new Products(1,"12_18 ay kışlık","beyaztakim","12-18 ay/86cm","Bebek&Çocuk Takım","Ürün kullanılmıştır, ihtiyaç fazlasıdır.","Az kullanılmış","LC Waikiki","Bej",28,39);
+        Products p1 = new Products(1,"12_18 ay kışlık","beyaztakim","12-18 ay/86cm","Bebek&Çocuk Takım","Ürün kullanılmıştır, ihtiyaç fazlasıdır.","Az kullanılmış","Chakra","Bej",28,39);
         Products p2 = new Products(2,"Bebek kazak takım","kazak","18-24 ay/92cm","Bebek&Çocuk Alt&Üst Takım","Defacto marka, ürünlerimiz sıfır ürünlerdir..","Yeni/Etiketli","Diğer","K.Rengi",14,150);
         Products p3 = new Products(3,"Külotlu çorap","corap","24-36 ay","Bebek&Çocuk Eldiven&Çorap","LCW marka külotlu çorap, alana hayırlı olsun.","Yeni&Etiketli","LC Waikiki","Beyaz",39,75);
         Products p4 = new Products(4,"ELBİSE","elbise","M/38","Kadın Ofis Elbisesi","Hiçbir kusuru yoktur, birazcık rengi solmuştur, oda fotoda belli oluyor.","Az kullanılmış","Mango","Pembe",99,210);

@@ -46,6 +46,14 @@ public class DetailedScreenFragment extends Fragment {
 
         binding.textViewColor.setText(product.getColor());
 
+        binding.textViewTitle.setText(product.getTitle());
+
+        String price = String.valueOf(product.getPrice());
+        binding.textViewPrice.setText(price + " TL");
+
+        String favorited = String.valueOf(product.getFavorited());
+        binding.textViewFavoritedNumber.setText(favorited);
+
 
 
         ArrayList<String> taksitArray = new ArrayList<>();
