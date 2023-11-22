@@ -1,8 +1,10 @@
 package com.example.contactapp.room;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.contactapp.data.entity.Kisiler;
 
@@ -21,5 +23,14 @@ public interface KisilerDao {
     // veri tabanına ekle
     @Insert
     Completable kaydet(Kisiler kisi);
+
+    @Update
+    Completable guncelle(Kisiler kisi);
+
+    @Delete
+    Completable sil(Kisiler kisi);
+
+    @Query("SELECT * FROM kisiler WHERE kisi_ad like '%' || :aramaKelimesi || '%'")
+    Single<List<Kisiler>> ara(String aramaKelimesi);
 
 }
