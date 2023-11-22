@@ -10,13 +10,20 @@ import com.example.contactapp.data.repo.KisilerDaoRepository;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class AnasayfaViewModel extends ViewModel {
 
-    public KisilerDaoRepository kRepo = new KisilerDaoRepository();
+    public KisilerDaoRepository kRepo;
     public MutableLiveData<List<Kisiler>> kisilerListesi;
 
+    @Inject
     // Constractor, initten gelme
-    public AnasayfaViewModel(){
+    public AnasayfaViewModel(KisilerDaoRepository kRepo){
+        this.kRepo = kRepo;
         kisileriYukle();
         kisilerListesi =kRepo.kisilerListesi;
     }
