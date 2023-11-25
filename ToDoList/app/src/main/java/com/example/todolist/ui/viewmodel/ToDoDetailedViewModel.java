@@ -1,4 +1,20 @@
 package com.example.todolist.ui.viewmodel;
 
-public class ToDoDetailedViewModel {
+import androidx.lifecycle.ViewModel;
+
+import com.example.todolist.data.repo.ToDoDaoRepository;
+
+import javax.inject.Inject;
+
+public class ToDoDetailedViewModel extends ViewModel {
+    private ToDoDaoRepository trepo;
+
+    @Inject
+    public ToDoDetailedViewModel(ToDoDaoRepository trepo){
+        this.trepo = trepo;
+    }
+
+    public void update(int toDoId,String toDoName, boolean toDoDone){
+        trepo.update(toDoId,toDoName,toDoDone);
+    }
 }

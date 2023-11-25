@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_activity_nav">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainScreenFragment">
+
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.todolist.ui.fragment.MainScreenFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/goToAddFragment"
+            app:destination="@id/toDoAddFragment" />
+        <action
+            android:id="@+id/goToDetailedFragment"
+            app:destination="@id/toDoDetailedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoDetailedFragment"
+        android:name="com.example.todolist.ui.fragment.ToDoDetailedFragment"
+        android:label="fragment_to_do_detailed"
+        tools:layout="@layout/fragment_to_do_detailed" >
+        <argument
+            android:name="toDo"
+            app:argType="com.example.todolist.data.entity.ToDos" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoAddFragment"
+        android:name="com.example.todolist.ui.fragment.ToDoAddFragment"
+        android:label="fragment_to_do_add"
+        tools:layout="@layout/fragment_to_do_add" />
 
 </navigation>
