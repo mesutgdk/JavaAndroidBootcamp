@@ -10,13 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.todolist.R;
-import com.example.todolist.data.entity.ToDos;
 import com.example.todolist.databinding.FragmentToDoDetailedBinding;
-import com.example.todolist.ui.viewmodel.ToDoAddViewModel;
 import com.example.todolist.ui.viewmodel.ToDoDetailedViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
 
+@AndroidEntryPoint
 public class ToDoDetailedFragment extends Fragment {
 
     private FragmentToDoDetailedBinding binding;
@@ -32,14 +31,14 @@ public class ToDoDetailedFragment extends Fragment {
 
         ToDos toDo = bundle.getToDo();
 
-        binding.editTextToDoName.setText(toDo.getToDoName());
-        binding.toggleButtonIsDone.setChecked(toDo.isToDoDone());
+        binding.editTextToDoName.setText(toDo.getTo_do_name());
+//        binding.toggleButtonIsDone.setChecked(toDo.isToDoDone());
 
         binding.buttonUpdate.setOnClickListener(v -> {
             String toDoName = binding.editTextToDoName.getText().toString();
             Boolean toDoDone = binding.toggleButtonIsDone.isActivated();
 
-            viewModel.update(toDo.getToDoId(), toDoName,toDoDone);
+            viewModel.update(toDo.getTo_do_id(), toDoName,toDoDone);
 
         });
 

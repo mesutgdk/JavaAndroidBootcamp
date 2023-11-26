@@ -1,43 +1,60 @@
 package com.example.todolist.data.entity;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity(tableName = "jobs")
 public class ToDos implements Serializable {
 
-    private int toDoId;
-    private String toDoName;
-    private boolean toDoDone;
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "jid")
+    @NonNull
+    private int to_do_id;
+
+    @ColumnInfo(name = "jname")
+    @NonNull
+    private String to_do_name;
+
+
+    @ColumnInfo(name = "jdone")
+    @NonNull
+    private boolean to_do_done;
 
     public ToDos() {
     }
 
-    public ToDos(int toDoId, String toDoName, boolean toDoDone) {
-        this.toDoId = toDoId;
-        this.toDoName = toDoName;
-        this.toDoDone = toDoDone;
+    public ToDos(int to_do_id, @NonNull String to_do_name, boolean to_do_done) {
+        this.to_do_id = to_do_id;
+        this.to_do_name = to_do_name;
+        this.to_do_done = to_do_done;
     }
 
-    public int getToDoId() {
-        return toDoId;
+    public int getTo_do_id() {
+        return to_do_id;
     }
 
-    public void setToDoId(int toDoId) {
-        this.toDoId = toDoId;
+    public void setTo_do_id(int to_do_id) {
+        this.to_do_id = to_do_id;
     }
 
-    public String getToDoName() {
-        return toDoName;
+    @NonNull
+    public String getTo_do_name() {
+        return to_do_name;
     }
 
-    public void setToDoName(String toDoName) {
-        this.toDoName = toDoName;
+    public void setTo_do_name(@NonNull String to_do_name) {
+        this.to_do_name = to_do_name;
     }
 
-    public boolean isToDoDone() {
-        return toDoDone;
+    public boolean isTo_do_done() {
+        return to_do_done;
     }
 
-    public void setToDoDone(boolean toDoDone) {
-        this.toDoDone = toDoDone;
+    public void setTo_do_done(boolean to_do_done) {
+        this.to_do_done = to_do_done;
     }
 }

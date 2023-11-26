@@ -1,12 +1,18 @@
 package com.example.todolist.di;
 
+import android.content.Context;
+
+import androidx.room.Room;
+
 import com.example.todolist.data.repo.ToDoDaoRepository;
+import com.example.todolist.room.Veritabani;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
+import dagger.hilt.android.qualifiers.ApplicationContext;
 import dagger.hilt.components.SingletonComponent;
 
 @Module
@@ -14,7 +20,15 @@ import dagger.hilt.components.SingletonComponent;
 public class AppModule {
     @Provides
     @Singleton
-    public ToDoDaoRepository provideToDoDaoRepository(){
-        return new ToDoDaoRepository();
+    public ToDoDaoRepository provideToDoDaoRepository(ToDoDao tdao){
+        return new ToDoDaoRepository(tdao);
+    }
+    @Provides
+    @Singleton
+    public ToDoDao provideToDoDao(@ApplicationContext Context context){
+        Veritabani vt = Room.databaseBuilder(context,Veritabani.class,"list.sqlite")
+                .createFromAsset("list.sqlite")
+                .build();
+        return vt.getToDoDao();
     }
 }

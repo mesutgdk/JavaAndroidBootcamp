@@ -14,6 +14,9 @@ import com.example.todolist.R;
 import com.example.todolist.databinding.FragmentToDoAddBinding;
 import com.example.todolist.ui.viewmodel.ToDoAddViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class ToDoAddFragment extends Fragment {
 
     private FragmentToDoAddBinding binding;

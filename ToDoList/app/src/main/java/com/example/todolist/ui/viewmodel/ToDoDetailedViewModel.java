@@ -6,6 +6,9 @@ import com.example.todolist.data.repo.ToDoDaoRepository;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class ToDoDetailedViewModel extends ViewModel {
     private ToDoDaoRepository trepo;
 

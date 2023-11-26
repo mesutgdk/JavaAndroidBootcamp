@@ -27,6 +27,7 @@ public class KisilerDaoRepository {
 
     public void kaydet(String kisi_ad,String kisi_tel){
         Kisiler yeniKisi = new Kisiler(0,kisi_ad,kisi_tel);
+
         kdao.kaydet(yeniKisi).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() {
