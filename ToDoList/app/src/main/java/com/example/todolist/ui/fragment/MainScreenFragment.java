@@ -63,6 +63,7 @@ public class MainScreenFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(MainScreenViewModel.class);
+        //viewModel.loadToDos();
     }
 
     @Override

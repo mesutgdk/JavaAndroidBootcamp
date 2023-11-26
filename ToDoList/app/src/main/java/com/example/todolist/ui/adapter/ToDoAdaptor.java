@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.todolist.data.repo.ToDoo;
 import com.example.todolist.databinding.CardDesignBinding;
 import com.example.todolist.ui.fragment.MainScreenFragmentDirections;
 import com.example.todolist.ui.viewmodel.MainScreenViewModel;
@@ -17,13 +18,13 @@ import java.util.List;
 
 public class ToDoAdaptor extends RecyclerView.Adapter<ToDoAdaptor.CardDesignHolder> {
 
-    private List<ToDos> toDosList;
+    private List<ToDoo> toDosList;
 
     private Context mContext;
 
     private MainScreenViewModel viewModel;
 
-    public ToDoAdaptor(List<ToDos> toDosList, Context mContext, MainScreenViewModel viewModel) {
+    public ToDoAdaptor(List<ToDoo> toDosList, Context mContext, MainScreenViewModel viewModel) {
         this.toDosList = toDosList;
         this.mContext = mContext;
         this.viewModel = viewModel;
@@ -50,24 +51,24 @@ public class ToDoAdaptor extends RecyclerView.Adapter<ToDoAdaptor.CardDesignHold
 
     @Override
     public void onBindViewHolder(@NonNull CardDesignHolder holder, int position) {
-        ToDos toDo = toDosList.get(position);
+        ToDoo job = toDosList.get(position);
         CardDesignBinding t = holder.design;
 
-        t.textViewToDoName.setText(toDo.getTo_do_name());
+        t.textViewToDoName.setText(job.getTo_do_name());
 
         t.doneImageView.setImageResource(mContext.getResources()
                 //terniary operator to select if it is selected done or not
-                .getIdentifier(toDo.isTo_do_done() == true ? "its_done":"not_done","drawable",mContext.getPackageName()));
+                .getIdentifier(job.isTo_do_done() == true ? "its_done":"not_done","drawable",mContext.getPackageName()));
 
         t.deleteImageView.setOnClickListener(v -> {
-            Snackbar.make(v,toDo.getTo_do_name()+" silinsin mi?", Snackbar.LENGTH_SHORT)
+            Snackbar.make(v,job.getTo_do_name()+" silinsin mi?", Snackbar.LENGTH_SHORT)
                     .setAction("EVET",v1 -> {
-                        viewModel.delete(toDo.getTo_do_id());
+                        viewModel.delete(job.getTo_do_id());
                     })
                     .show();
         });
         t.cardViewToDo.setOnClickListener(v -> {
-            MainScreenFragmentDirections.GoToDetailedFragment enterDetail = MainScreenFragmentDirections.goToDetailedFragment(toDo);
+            MainScreenFragmentDirections.GoToDetailedFrag2 enterDetail = MainScreenFragmentDirections.goToDetailedFrag2(job);
             Navigation.findNavController(v).navigate(enterDetail);
 
         });

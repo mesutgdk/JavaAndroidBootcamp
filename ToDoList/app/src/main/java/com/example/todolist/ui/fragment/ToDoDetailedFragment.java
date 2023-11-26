@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.todolist.data.repo.ToDoo;
 import com.example.todolist.databinding.FragmentToDoDetailedBinding;
 import com.example.todolist.ui.viewmodel.ToDoDetailedViewModel;
 
@@ -29,7 +30,7 @@ public class ToDoDetailedFragment extends Fragment {
 
         ToDoDetailedFragmentArgs bundle = ToDoDetailedFragmentArgs.fromBundle(getArguments());
 
-        ToDos toDo = bundle.getToDo();
+        ToDoo toDo = bundle.getToDo();
 
         binding.editTextToDoName.setText(toDo.getTo_do_name());
 //        binding.toggleButtonIsDone.setChecked(toDo.isToDoDone());

@@ -1,6 +1,10 @@
 package com.example.todolist.data.repo;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
+
+import com.example.todolist.room.DosDao;
 
 import java.util.List;
 
@@ -12,19 +16,19 @@ import io.reactivex.schedulers.Schedulers;
 
 public class ToDoDaoRepository {
 
-    public MutableLiveData<List<ToDos>> toDoList = new MutableLiveData<>();
+    public MutableLiveData<List<ToDoo>> toDoList = new MutableLiveData<>();
 
-    private ToDoDao tdao;
+    private DosDao tdao;
 
 
-    public ToDoDaoRepository(ToDoDao tdao) {
+    public ToDoDaoRepository(DosDao tdao) {
         this.tdao = tdao;
     }
 
     public void save(String toDoName, boolean toDoDone){
-       ToDos newToDo = new ToDos(0,toDoName,toDoDone);
+       ToDoo newToDo = new ToDoo(0,toDoName,toDoDone);
 
-       tdao.addToDo(newToDo).subscribeOn(Schedulers.io())
+       tdao.add(newToDo).subscribeOn(Schedulers.io())
                .observeOn(AndroidSchedulers.mainThread())
                .subscribe(new CompletableObserver() {
                    @Override
@@ -40,7 +44,7 @@ public class ToDoDaoRepository {
     }
 
     public  void  update (int toDoId, String toDoName, boolean toDoDone){
-        ToDos updatedToDo = new ToDos(toDoId,toDoName,toDoDone);
+        ToDoo updatedToDo = new ToDoo(toDoId,toDoName,toDoDone);
 
         tdao.update(updatedToDo).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -60,12 +64,12 @@ public class ToDoDaoRepository {
     public void search(String searchWord){
         tdao.search(searchWord).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<List<ToDos>>() {
+                .subscribe(new SingleObserver<List<ToDoo>>() {
                     @Override
                     public void onSubscribe(Disposable d) {}
 
                     @Override
-                    public void onSuccess(List<ToDos> toDos) {
+                    public void onSuccess(List<ToDoo> toDos) {
                         toDoList.setValue(toDos);
                     }
 
@@ -75,7 +79,7 @@ public class ToDoDaoRepository {
     }
 
     public void delete(int toDoId){
-        ToDos deletedTodo = new ToDos(toDoId,"",true);
+        ToDoo deletedTodo = new ToDoo(toDoId,"",true);
         tdao.delete(deletedTodo).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() {
@@ -95,14 +99,15 @@ public class ToDoDaoRepository {
     public void loadToDos(){
         tdao.loadAllToDos().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<List<ToDos>>() {
+                .subscribe(new SingleObserver<List<ToDoo>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onSuccess(List<ToDos> toDos) {
+                    public void onSuccess(List<ToDoo> toDos) {
+                        Log.e("it is loaded","loading is completed");
                         toDoList.setValue(toDos);
                     }
 

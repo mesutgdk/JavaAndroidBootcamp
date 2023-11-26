@@ -14,7 +14,7 @@
             android:id="@+id/goToAddFragment"
             app:destination="@id/toDoAddFragment" />
         <action
-            android:id="@+id/goToDetailedFragment"
+            android:id="@+id/goToDetailedFrag2"
             app:destination="@id/toDoDetailedFragment" />
     </fragment>
     <fragment
@@ -24,17 +24,12 @@
         tools:layout="@layout/fragment_to_do_detailed">
         <argument
             android:name="toDo"
-            app:argType="com.example.todolist.data.entity.ToDos" />
+            app:argType="com.example.todolist.data.repo.ToDoo" />
     </fragment>
     <fragment
         android:id="@+id/toDoAddFragment"
         android:name="com.example.todolist.ui.fragment.ToDoAddFragment"
         android:label="fragment_to_do_add"
         tools:layout="@layout/fragment_to_do_add" />
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.todolist.ui.fragment.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
 
 </navigation>

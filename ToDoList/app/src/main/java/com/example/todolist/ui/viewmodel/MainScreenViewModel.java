@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.todolist.data.repo.ToDoDaoRepository;
+import com.example.todolist.data.repo.ToDoo;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 public class MainScreenViewModel extends ViewModel {
 
     public ToDoDaoRepository trepo;
-    public MutableLiveData<List<ToDos>> toDoList;
+    public MutableLiveData<List<ToDoo>> toDoList;
 
     @Inject
     public MainScreenViewModel(ToDoDaoRepository trepo){

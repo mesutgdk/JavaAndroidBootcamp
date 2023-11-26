@@ -1,4 +1,4 @@
-package com.example.todolist.data.entity;
+package com.example.todolist.data.repo;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -7,27 +7,27 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity(tableName = "jobs")
-public class ToDos implements Serializable {
+@Entity(tableName = "todos")
+public class ToDoo implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "jid")
+    @ColumnInfo(name = "to_do_id")
     @NonNull
     private int to_do_id;
 
-    @ColumnInfo(name = "jname")
+    @ColumnInfo(name = "to_do_name")
     @NonNull
     private String to_do_name;
 
 
-    @ColumnInfo(name = "jdone")
+    @ColumnInfo(name = "to_do_done")
     @NonNull
     private boolean to_do_done;
 
-    public ToDos() {
+    public ToDoo() {
     }
 
-    public ToDos(int to_do_id, @NonNull String to_do_name, boolean to_do_done) {
+    public ToDoo(int to_do_id, @NonNull String to_do_name, boolean to_do_done) {
         this.to_do_id = to_do_id;
         this.to_do_name = to_do_name;
         this.to_do_done = to_do_done;
