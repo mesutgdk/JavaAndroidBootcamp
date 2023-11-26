@@ -11,16 +11,16 @@ import java.io.Serializable;
 public class ToDoo implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "to_do_id")
+    @ColumnInfo(name = "do_id")
     @NonNull
     private int to_do_id;
 
-    @ColumnInfo(name = "to_do_name")
+    @ColumnInfo(name = "do_name")
     @NonNull
     private String to_do_name;
 
 
-    @ColumnInfo(name = "to_do_done")
+    @ColumnInfo(name = "do_done")
     @NonNull
     private boolean to_do_done;
 

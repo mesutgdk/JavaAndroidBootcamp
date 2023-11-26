@@ -27,7 +27,7 @@ public interface DosDao {
     @Delete
     Completable delete(ToDoo todo);
 
-    @Query("SELECT * FROM todos WHERE to_do_name like '%' || :searchWord || '%'")
+    @Query("SELECT * FROM todos WHERE do_name like '%' || :searchWord || '%'")
     Single<List<ToDoo>> search(String searchWord);
 
 

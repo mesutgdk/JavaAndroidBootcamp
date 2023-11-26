@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.todolist.room.DosDao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.CompletableObserver;
@@ -101,20 +102,13 @@ public class ToDoDaoRepository {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleObserver<List<ToDoo>>() {
                     @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
+                    public void onSubscribe(Disposable d) {}
                     @Override
-                    public void onSuccess(List<ToDoo> toDos) {
-                        Log.e("it is loaded","loading is completed");
-                        toDoList.setValue(toDos);
+                    public void onSuccess(List<ToDoo> jobs) {
+                        toDoList.setValue(jobs);
                     }
-
                     @Override
-                    public void onError(Throwable e) {
-
-                    }
+                    public void onError(Throwable e) {}
                 });
     }
 }

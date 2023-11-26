@@ -42,6 +42,7 @@ public class KisilerDaoRepository {
 
     public void guncelle(int kisi_id,String kisi_ad,String kisi_tel){
         Kisiler guncellenenKisi = new Kisiler(kisi_id,kisi_ad,kisi_tel);
+
         kdao.guncelle(guncellenenKisi).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() {
