@@ -1,10 +1,9 @@
 plugins {
     id("com.android.application")
-    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
-    namespace = "com.example.locationusage"
+    namespace = "com.example.mapusage"
     compileSdk = 34
 
     buildFeatures{
@@ -12,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.locationusage"
+        applicationId = "com.example.mapusage"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -44,7 +43,4 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
-    // location
-    implementation("com.google.android.gms:play-services-location:21.0.1")
 }
