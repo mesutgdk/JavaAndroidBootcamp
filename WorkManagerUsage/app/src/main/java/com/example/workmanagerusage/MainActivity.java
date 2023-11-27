@@ -2,6 +2,7 @@ package com.example.workmanagerusage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
@@ -25,10 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.buttonYap.setOnClickListener(v -> {
-            WorkRequest istek = new OneTimeWorkRequest //bi tıklama bir kere çalış
+            /*WorkRequest istek = new OneTimeWorkRequest //bi tıklama bir kere çalış
                     .Builder(MyWorker.class)
                     .setInitialDelay(10, TimeUnit.SECONDS) // geçikme ayarlanır
-                    .build();
+                    .build();*/
+            WorkRequest istek = new PeriodicWorkRequest
+                    .Builder(MyWorkerNotification.class,15,TimeUnit.MINUTES)
+                    .setInitialDelay(10,TimeUnit.SECONDS)
+                    .build();// 10 saniye
 
             WorkManager.getInstance(this).enqueue(istek);
         });
