@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainScreenFragment">
+
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.lezzetsofrasi.ui.fragment.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/goToDetailSecFrag"
+            app:destination="@id/detailedScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedScreenFragment"
+        android:name="com.example.lezzetsofrasi.ui.fragment.DetailedScreenFragment"
+        android:label="fragment_detailed_screen"
+        tools:layout="@layout/fragment_detailed_screen" />
+    <fragment
+        android:id="@+id/cartScreenFragment"
+        android:name="com.example.lezzetsofrasi.ui.fragment.CartScreenFragment"
+        android:label="fragment_cart_screen"
+        tools:layout="@layout/fragment_cart_screen" />
+    <fragment
+        android:id="@+id/favoriteScreenFragment"
+        android:name="com.example.lezzetsofrasi.ui.fragment.FavoriteScreenFragment"
+        android:label="fragment_favorite_screen"
+        tools:layout="@layout/fragment_favorite_screen" />
+</navigation>
