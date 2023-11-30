@@ -18,7 +18,11 @@
         android:id="@+id/detailedScreenFragment"
         android:name="com.example.lezzetsofrasi.ui.fragment.DetailedScreenFragment"
         android:label="fragment_detailed_screen"
-        tools:layout="@layout/fragment_detailed_screen" />
+        tools:layout="@layout/fragment_detailed_screen" >
+        <argument
+            android:name="yemek"
+            app:argType="com.example.lezzetsofrasi.data.entity.Yemekler" />
+    </fragment>
     <fragment
         android:id="@+id/cartScreenFragment"
         android:name="com.example.lezzetsofrasi.ui.fragment.CartScreenFragment"

@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.DetailedScreenFragment" />
+    tools:context=".ui.fragment.FavoriteScreenFragment">
+
+    <ImageView
+        android:id="@+id/exitDetailButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/close_vektor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/yemekDetailImage"
+        android:layout_width="199dp"
+        android:layout_height="301dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:src="@drawable/inception"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipTeslimat" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Günün Seçimi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chipTeslimat"
+        app:layout_constraintTop_toTopOf="@+id/chipTeslimat" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipTeslimat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Hızlı Teslimat"
+        app:layout_constraintEnd_toStartOf="@+id/chipBest"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chipIndirim"
+        app:layout_constraintTop_toBottomOf="@+id/exitDetailButton" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipIndirim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="%5 İndirim"
+        app:layout_constraintEnd_toStartOf="@+id/chipTeslimat"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chipTeslimat" />
+
+    <TextView
+        android:id="@+id/textViewYemekIsmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Ahtopot Bonfile"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yemekDetailImage" />
+
+    <TextView
+        android:id="@+id/textViewYemekUcret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="15 TL"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewYemekIsmi"
+        app:layout_constraintStart_toStartOf="@+id/textViewYemekIsmi"
+        app:layout_constraintTop_toBottomOf="@+id/textViewYemekIsmi" />
+
+    <Button
+        android:id="@+id/buttonSepeteEkle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sepete Ekle"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="576dp" />
+
+    <TextView
+        android:id="@+id/textViewToplamUcret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="45 TL"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="584dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
