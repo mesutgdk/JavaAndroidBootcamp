@@ -14,7 +14,7 @@ import retrofit2.Response;
 
 public class YemeklerDaoRepository {
 
-    public MutableLiveData<List<Yemekler>> yemekListesi = new MutableLiveData<>();
+    public MutableLiveData<List<Yemekler>> yemeklerListesi = new MutableLiveData<>();
 
     private YemeklerDao ydao;
 
@@ -27,7 +27,7 @@ public class YemeklerDaoRepository {
             @Override
             public void onResponse(Call<YemeklerCevap> call, Response<YemeklerCevap> response) {
                 List<Yemekler> liste = response.body().getYemekler();
-                yemekListesi.setValue(liste);
+                yemeklerListesi.setValue(liste);
             }
 
             @Override
@@ -37,5 +37,5 @@ public class YemeklerDaoRepository {
 
         });
     }
-    }
+
 }

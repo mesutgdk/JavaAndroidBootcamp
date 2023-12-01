@@ -72,4 +72,5 @@ public class KisilerAdapter extends RecyclerView.Adapter<KisilerAdapter.CardTasa
     public int getItemCount() {
         return kisilerListesi.size();
     }
+
 }

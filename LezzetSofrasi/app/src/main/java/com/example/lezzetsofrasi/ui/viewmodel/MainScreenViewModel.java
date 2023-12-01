@@ -22,6 +22,7 @@ public class MainScreenViewModel extends ViewModel {
     public MainScreenViewModel(YemeklerDaoRepository yrepo, MutableLiveData<List<Yemekler>> yemeklerListesi) {
         this.yrepo = yrepo;
         this.yemeklerListesi = yemeklerListesi;
+        yemeklerYukle();
     }
 
     public void yemeklerYukle(){
