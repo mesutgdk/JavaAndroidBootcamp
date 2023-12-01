@@ -19,5 +19,7 @@ public class MainScreenFragment extends Fragment {
                              Bundle savedInstanceState) {
        binding = FragmentMainScreenBinding.inflate(inflater,container,false);
         return binding.getRoot();
+
+        binding.yemeklerRv.set
     }
 }
