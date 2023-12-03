@@ -67,7 +67,7 @@ public class YemeklerAdapter extends RecyclerView.Adapter<YemeklerAdapter.CardDe
     public void resimGoster(String resimAdi){
         String url = "http://kasimadalan.pe.hu/yemekler/resimler/"+resimAdi;
 
-        Glide.with(this).load(url).override(300,300).into(t.imageView);
+        Glide.with(this).load(url).override(300,300).into(bindViewHolder(this).imageView);
     }
 
 }
