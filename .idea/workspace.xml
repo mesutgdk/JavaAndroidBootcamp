@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d17e06ed-0ec6-404b-8a94-73e69d3f8f67" name="Changes" comment="" />
+    <list default="true" id="d17e06ed-0ec6-404b-8a94-73e69d3f8f67" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/1 bitirme ödevi/app/src/main/res/drawable/indirim.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1 bitirme ödevi/app/src/main/res/drawable/kara_kalp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1 bitirme ödevi/app/src/main/res/drawable/karayildiz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1 bitirme ödevi/app/src/main/res/drawable/kirmizi_kalp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1 bitirme ödevi/app/src/main/res/drawable/lezzet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LezzettSofrasi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LezzettSofrasi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/list2.sqlite" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

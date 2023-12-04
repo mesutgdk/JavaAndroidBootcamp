@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6778497e-b054-4e57-9167-70226e9b1c78" name="Changes" comment="" />
+    <list default="true" id="6778497e-b054-4e57-9167-70226e9b1c78" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/yemeksepetiuygulamasi/retrofit/SepetYemekDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/yemeksepetiuygulamasi/retrofit/SepetYemekDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/yemeksepetiuygulamasi/ui/viewmodel/SepetYemekGetirViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/yemeksepetiuygulamasi/ui/viewmodel/SepetYemekGetirViewModel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +33,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cidr.known.project.marker": "true",
     "last_opened_file_path": "/Users/mesutgdk/Desktop/AndroidJavaBootcamp/LezzettSofrasi"
   }
