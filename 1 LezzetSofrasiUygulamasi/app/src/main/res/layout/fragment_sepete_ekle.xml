@@ -205,10 +205,20 @@
             android:id="@+id/imageViewSepete"
             android:layout_width="40sp"
             android:layout_height="40sp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/sepetim"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbarDetay" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:src="@drawable/lezzet"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbarDetay"
+            app:layout_constraintEnd_toEndOf="@+id/toolbarDetay"
+            app:layout_constraintStart_toStartOf="@+id/toolbarDetay"
             app:layout_constraintTop_toTopOf="@+id/toolbarDetay" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

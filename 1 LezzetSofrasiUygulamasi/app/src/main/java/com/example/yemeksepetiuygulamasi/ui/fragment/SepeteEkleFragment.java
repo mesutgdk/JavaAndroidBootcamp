@@ -32,7 +32,7 @@ private int topla=0,yemek_deger_tut=0,id;
     private SepeteEkleViewModel v;
     private List<Data> dataListesi;
     private String begen,yildiz,yemek_ad;
-    
+
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
