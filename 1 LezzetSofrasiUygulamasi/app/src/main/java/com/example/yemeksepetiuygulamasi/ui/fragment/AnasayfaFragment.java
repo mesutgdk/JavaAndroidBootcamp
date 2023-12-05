@@ -54,28 +54,25 @@ public class AnasayfaFragment extends Fragment {
 
       binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit(String s) {
-                if (s.isEmpty()) {
+            public boolean onQueryTextSubmit(String searchWord) {
+                if (searchWord.isEmpty()) {
                     // Arama kelimesi boşsa tüm yemekleri yeniden yükle
                     viewModel.yemekleriYukle();
                 } else {
                     // Arama yap
-                    viewModel.ara(s);
+                    viewModel.ara(searchWord);
                 }
 
                 return true;
             }
 
-          public boolean onQueryTextChange(String s) {
+          public boolean onQueryTextChange(String searchWord) {
               // Arama sırasında her metin değişikliğinde aramayı güncelle
-              viewModel.ara(s);
+              viewModel.ara(searchWord);
 
               return true;
           }
         });
-
-
-
         return binding.getRoot();
     }
 
@@ -84,8 +81,6 @@ public class AnasayfaFragment extends Fragment {
         super.onCreate(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(AnasayfaViewModel.class);
     }
-
-
     @Override
     public void onResume() {
         super.onResume();

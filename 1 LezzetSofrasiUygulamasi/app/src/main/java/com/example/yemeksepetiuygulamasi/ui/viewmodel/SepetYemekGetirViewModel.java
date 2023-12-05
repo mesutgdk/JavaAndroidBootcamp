@@ -24,11 +24,6 @@ public class SepetYemekGetirViewModel extends ViewModel {
         sepetYemekler = yrepo.sepetYemeklerListe;
 
     }
-
-
-
-
-
     public void kisileriYukle(){
         yrepo.sepetGetir("gGeCo");
     }

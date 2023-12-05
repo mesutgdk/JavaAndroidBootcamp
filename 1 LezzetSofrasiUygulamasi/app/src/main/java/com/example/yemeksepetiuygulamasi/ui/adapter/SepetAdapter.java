@@ -64,14 +64,8 @@ public class SepetAdapter extends RecyclerView.Adapter<SepetAdapter.SepetTasarim
                     .setAction("EVET", view1 -> {
                         viewModel.sil( String.valueOf(yemek.getSepet_yemek_id()),  yemek.getKullanici_adi());
                     }).show();
-
         });
-
-
     }
-
-
-
     @Override
     public int getItemCount() {
         return kisilerListesi.size();
