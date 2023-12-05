@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.YemekSepetiUygulamasi"
+        android:theme="@style/Theme.LezzetSofrasiUygulamasi"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +32,7 @@ private int topla=0,yemek_deger_tut=0,id;
     private SepeteEkleViewModel v;
     private List<Data> dataListesi;
     private String begen,yildiz,yemek_ad;
-
-
+    
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,9 +44,12 @@ private int topla=0,yemek_deger_tut=0,id;
         binding.textViewUrunAd.setText(yemek.getYemek_adi());
         binding.textViewUrunAdet.setText(String.valueOf(yemek_siparis_adet) );
         String url = "http://kasimadalan.pe.hu/yemekler/resimler/" + yemek.getYemek_resim_adi();
-        Glide.with(this).load(url).override(500, 750).into(binding.ivFilm);
+        Glide.with(this).load(url).override(500, 750).into(binding.ivYemek);
 
-
+        // Sepete gitmek için
+        binding.imageViewSepete.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(R.id.sepeteGit);
+        });
 
      yemek_deger_tut=  Integer.parseInt(yemek.getYemek_fiyat());
 
@@ -70,10 +73,10 @@ private int topla=0,yemek_deger_tut=0,id;
         }
         dataListesi.clear();
 
-binding.imageView4.setOnClickListener(view -> {
-    guncelleYildizDerecesi(1);
- v.veriGuncel(id,begen,"1",yemek_ad);
-});
+        binding.imageView4.setOnClickListener(view -> {
+         guncelleYildizDerecesi(1);
+        v.veriGuncel(id,begen,"1",yemek_ad);
+        });
         binding.imageView5.setOnClickListener(view -> {
             guncelleYildizDerecesi(2);
             v.veriGuncel(id,begen,"2",yemek_ad);

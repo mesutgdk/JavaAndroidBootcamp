@@ -25,6 +25,9 @@
         <argument
             android:name="yemek"
             app:argType="com.example.yemeksepetiuygulamasi.data.entity.Yemekler" />
+        <action
+            android:id="@+id/sepeteGit"
+            app:destination="@id/sepetYemekGetirFragment" />
     </fragment>
     <fragment
         android:id="@+id/sepetYemekGetirFragment"
