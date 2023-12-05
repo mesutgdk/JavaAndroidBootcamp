@@ -35,7 +35,7 @@ private SepetYemekGetirViewModel v;
         binding.rv.setLayoutManager(new LinearLayoutManager(requireContext()));
         v.sepetYemekler.observe(getViewLifecycleOwner(),sepetListe -> {
             SepetAdapter yAdapter = new SepetAdapter(requireContext(),sepetListe,v);
-            binding.textViewTutar.setText("Toplam "+v.sepetTutari());
+            binding.textViewTutar.setText("Toplam "+v.sepetTutari()+" ₺");
             binding.rv.setAdapter(yAdapter);
        ;
 

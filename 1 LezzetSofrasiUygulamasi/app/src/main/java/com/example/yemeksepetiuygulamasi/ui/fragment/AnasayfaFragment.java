@@ -48,9 +48,14 @@ public class AnasayfaFragment extends Fragment {
             binding.rv.setAdapter(yAdapter);
         });
 
-        binding.fab.setOnClickListener(view -> {
+        binding.imageViewSepetim.setOnClickListener(view -> {
             Navigation.findNavController(view).navigate(R.id.sepetGetir);
         });
+
+        /*binding.fab.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(R.id.sepetGetir);
+        });
+        */
 
       binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -62,7 +67,6 @@ public class AnasayfaFragment extends Fragment {
                     // Arama yap
                     viewModel.ara(searchWord);
                 }
-
                 return true;
             }
 
